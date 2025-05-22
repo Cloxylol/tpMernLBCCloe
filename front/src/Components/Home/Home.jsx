@@ -125,11 +125,11 @@ const Home = () => {
         <option value="informatique">Informatique</option>
         <option value="loisir">Loisir</option>
       </select>
-      <div>
+      <div className="annonces-container">
         {annonces
           .filter((a) => selectedCategory === "" || a.category === selectedCategory)
           .map((annonce) => (
-            <div key={annonce._id}>
+            <div className="annonce-card" key={annonce._id}>
               <h3>{annonce.title}</h3>
               <p>{annonce.description}</p>
               <p>Catégorie : {annonce.category}</p>
@@ -140,7 +140,6 @@ const Home = () => {
               </Link>
             </div>
           ))}
-
       </div>
       <div>
         <h2>Crée une nouvelle annonce</h2>
